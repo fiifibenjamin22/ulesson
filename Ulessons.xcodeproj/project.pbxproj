@@ -153,6 +153,7 @@
 		479AA67A270639A100718BBC /* PromoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoViewModel.swift; sourceTree = "<group>"; };
 		479AA68027074F4500718BBC /* EmptyLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLiveCell.swift; sourceTree = "<group>"; };
 		479AA68327076AA500718BBC /* MyLessonsFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLessonsFooterCell.swift; sourceTree = "<group>"; };
+		479AA685270780BE00718BBC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +184,7 @@
 		4751FEF5270340A800107A66 = {
 			isa = PBXGroup;
 			children = (
+				479AA685270780BE00718BBC /* README.md */,
 				4751FF00270340A800107A66 /* Ulessons */,
 				4751FF1A270340AB00107A66 /* UlessonsTests */,
 				4751FF24270340AB00107A66 /* UlessonsUITests */,
