@@ -77,6 +77,7 @@ class HCellViewCell: UICollectionViewCell {
             $0.image = Icons.Common.checkedBig
             $0.clipsToBounds = true
             $0.layer.cornerRadius = Constants.ClockImageView.height / 2
+            $0.backgroundColor = .black.withAlphaComponent(0.4)
         }
         
         self.baseView.addSubview(timeImage)
@@ -94,6 +95,7 @@ class HCellViewCell: UICollectionViewCell {
             $0.lineHeight = Constants.NameLabel.lineHeight
             $0.textColor = UIColor.white
             $0.numberOfLines = Constants.NameLabel.numberOfLines
+            $0.backgroundColor = .black.withAlphaComponent(0.4)
         }
         
         self.baseView.addSubview(timeLabel)
@@ -111,6 +113,7 @@ class HCellViewCell: UICollectionViewCell {
             $0.lineHeight = Constants.NameLabel.lineHeight
             $0.textColor = UIColor.white
             $0.numberOfLines = Constants.NameLabel.numberOfLines
+            $0.backgroundColor = .black.withAlphaComponent(0.4)
         }
         
         self.baseView.addSubview(lessonTitleLabel)

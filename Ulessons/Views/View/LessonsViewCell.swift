@@ -100,7 +100,8 @@ class LessonViewCell: UICollectionViewCell {
         }
         
         lessonMessageImage.apply {
-            $0.backgroundColor = .appTextWhite
+            $0.backgroundColor = .clear
+            $0.image = Icons.Common.message
         }
         
         self.lessonImage.addSubview(lessonMessageImage)

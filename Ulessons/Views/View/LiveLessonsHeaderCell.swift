@@ -7,8 +7,9 @@
 
 import UIKit
 
-import UIKit
-
+protocol DropDownDelegate {
+    func showDropdownMenu(menuTopConstant: CGFloat)
+}
 class LiveLessonsHeaderCell: UICollectionViewCell,UICollectionViewDelegate,UICollectionViewDataSource {
     
     lazy var collectionView: UICollectionView = {
@@ -21,7 +22,21 @@ class LiveLessonsHeaderCell: UICollectionViewCell,UICollectionViewDelegate,UICol
     }()
     
     let paginator = UIPageControl().manualLayoutable()
-    private var dropDownButton = UIButton().manualLayoutable()
+    var delegate: DropDownDelegate?
+    private var dropDownButton: UIButton = {
+        var filled = UIButton.Configuration.filled()
+        filled.title = "Filter"
+        filled.buttonSize = .large
+        filled.image = Icons.Common.dropdown
+        filled.imagePlacement = .trailing
+        filled.imagePadding = 5
+        filled.baseBackgroundColor = .init(hexString: "#313848")
+
+        let button = UIButton(configuration: filled, primaryAction: nil)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     var promoViewModel = [PromoViewModel]()
     
     override init(frame: CGRect) {
@@ -80,6 +95,7 @@ extension LiveLessonsHeaderCell: UICollectionViewDelegateFlowLayout {
             $0.backgroundColor = .appBlack
             $0.roundCorners()
             $0.clipsToBounds = true
+            $0.addTarget(self, action: #selector(handleFilterSelections), for: .touchUpInside)
         }
         
         self.addSubview(dropDownButton)
@@ -128,4 +144,8 @@ extension LiveLessonsHeaderCell: UICollectionViewDelegateFlowLayout {
        let x = targetContentOffset.pointee.x
        paginator.currentPage = Int(x/self.frame.width)
    }
+    
+    @objc private func handleFilterSelections() {
+        self.delegate?.showDropdownMenu(menuTopConstant: 350)
+    }
 }

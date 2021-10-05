@@ -68,6 +68,18 @@
 		479AA67B270639A100718BBC /* PromoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA67A270639A100718BBC /* PromoViewModel.swift */; };
 		479AA68127074F4500718BBC /* EmptyLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68027074F4500718BBC /* EmptyLiveCell.swift */; };
 		479AA68427076AA500718BBC /* MyLessonsFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68327076AA500718BBC /* MyLessonsFooterCell.swift */; };
+		479AA688270A89F900718BBC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA687270A89F900718BBC /* DataStore.swift */; };
+		479AA68B270C3C5D00718BBC /* LeftIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68A270C3C5D00718BBC /* LeftIconButton.swift */; };
+		479AA68D270C3CD200718BBC /* TouchGestureRecorgnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68C270C3CD200718BBC /* TouchGestureRecorgnizer.swift */; };
+		479AA690270C3FA600718BBC /* DropDownData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68F270C3FA600718BBC /* DropDownData.swift */; };
+		479AA692270C3FDF00718BBC /* DropDownPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA691270C3FDF00718BBC /* DropDownPopupViewController.swift */; };
+		479AA694270C40C000718BBC /* DropDownSelectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA693270C40C000718BBC /* DropDownSelectableButton.swift */; };
+		479AA699270C422900718BBC /* DropDownPopupViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA698270C422900718BBC /* DropDownPopupViewBuilder.swift */; };
+		479AA69C270C429500718BBC /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA69B270C429500718BBC /* UIStackViewExtension.swift */; };
+		479AA69E270C432C00718BBC /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA69D270C432C00718BBC /* UILabelExtension.swift */; };
+		479AA6A0270C448600718BBC /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA69F270C448600718BBC /* Filter.swift */; };
+		479AA6A2270C492900718BBC /* RightIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA6A1270C492900718BBC /* RightIconButton.swift */; };
+		479AA6A4270C4D4B00718BBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 479AA6A3270C4D4B00718BBC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +166,18 @@
 		479AA68027074F4500718BBC /* EmptyLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLiveCell.swift; sourceTree = "<group>"; };
 		479AA68327076AA500718BBC /* MyLessonsFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLessonsFooterCell.swift; sourceTree = "<group>"; };
 		479AA685270780BE00718BBC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		479AA687270A89F900718BBC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		479AA68A270C3C5D00718BBC /* LeftIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftIconButton.swift; sourceTree = "<group>"; };
+		479AA68C270C3CD200718BBC /* TouchGestureRecorgnizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecorgnizer.swift; sourceTree = "<group>"; };
+		479AA68F270C3FA600718BBC /* DropDownData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownData.swift; sourceTree = "<group>"; };
+		479AA691270C3FDF00718BBC /* DropDownPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownPopupViewController.swift; sourceTree = "<group>"; };
+		479AA693270C40C000718BBC /* DropDownSelectableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSelectableButton.swift; sourceTree = "<group>"; };
+		479AA698270C422900718BBC /* DropDownPopupViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownPopupViewBuilder.swift; sourceTree = "<group>"; };
+		479AA69B270C429500718BBC /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		479AA69D270C432C00718BBC /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		479AA69F270C448600718BBC /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		479AA6A1270C492900718BBC /* RightIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightIconButton.swift; sourceTree = "<group>"; };
+		479AA6A3270C4D4B00718BBC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,16 +229,17 @@
 		4751FF00270340A800107A66 /* Ulessons */ = {
 			isa = PBXGroup;
 			children = (
+				479AA686270A89E600718BBC /* CoreData */,
 				479AA6212703980300718BBC /* Fonts */,
 				4751FF4E2703554100107A66 /* Configs */,
 				4751FF3D27034EF200107A66 /* Commons */,
 				4751FF3A27034B7200107A66 /* EntryTools */,
-				4751FF362703424B00107A66 /* Model */,
 				4751FF342703421E00107A66 /* Views */,
 				4751FF352703423200107A66 /* ViewModel */,
 				4751FF0D270340AB00107A66 /* Assets.xcassets */,
 				4751FF0F270340AB00107A66 /* LaunchScreen.storyboard */,
 				4751FF12270340AB00107A66 /* Info.plist */,
+				479AA6A3270C4D4B00718BBC /* Localizable.strings */,
 				4751FF0A270340A800107A66 /* Ulessons.xcdatamodeld */,
 			);
 			path = Ulessons;
@@ -240,6 +265,8 @@
 		4751FF342703421E00107A66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4751FF362703424B00107A66 /* Model */,
+				479AA68E270C3EA500718BBC /* DropDown */,
 				479AA6622705439200718BBC /* Controller */,
 				479AA6612705438A00718BBC /* View */,
 			);
@@ -258,11 +285,13 @@
 		4751FF362703424B00107A66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				479AA68F270C3FA600718BBC /* DropDownData.swift */,
 				47371FFB27037BFC004B4BB8 /* Lesson.swift */,
 				47371FFD27037C2A004B4BB8 /* Tutor.swift */,
 				47371FFF27037C4C004B4BB8 /* Subject.swift */,
 			);
-			path = Model;
+			name = Model;
+			path = DropDown/Model;
 			sourceTree = "<group>";
 		};
 		4751FF3A27034B7200107A66 /* EntryTools */ = {
@@ -278,26 +307,23 @@
 		4751FF3D27034EF200107A66 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				479AA69A270C426100718BBC /* Extensions */,
 				479AA67727061E3700718BBC /* Network */,
 				479AA6592704CE1300718BBC /* AppView */,
 				479AA64A2704CA5A00718BBC /* TableView */,
 				4751FF55270357E100107A66 /* Constants.swift */,
 				4737200127038438004B4BB8 /* Generics.swift */,
-				479AA60B270389FB00718BBC /* UIViewExtension.swift */,
-				479AA60D27038AE000718BBC /* LayoutExtension.swift */,
 				479AA60F27038C5000718BBC /* UIEdgeInsets.swift */,
-				479AA61127038DE100718BBC /* UIColorExtension.swift */,
-				479AA6132703912E00718BBC /* NSObjectExtension.swift */,
 				479AA615270391A800718BBC /* TypeAliases.swift */,
-				479AA6172703957800718BBC /* UIViewControllerExtension.swift */,
 				479AA6192703965C00718BBC /* AppNavigationController.swift */,
 				479AA61B270396A500718BBC /* Icons.swift */,
-				479AA61D2703971700718BBC /* UIFontExtension.swift */,
 				479AA61F2703974800718BBC /* AppError.swift */,
-				479AA6462704C38100718BBC /* UINavigationControllerExtension.swift */,
 				479AA6482704C3C600718BBC /* Strings.swift */,
 				479AA665270553C500718BBC /* LessonsLabel.swift */,
 				479AA66D270563A500718BBC /* Router.swift */,
+				479AA68A270C3C5D00718BBC /* LeftIconButton.swift */,
+				479AA6A1270C492900718BBC /* RightIconButton.swift */,
+				479AA68C270C3CD200718BBC /* TouchGestureRecorgnizer.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -403,6 +429,66 @@
 				479AA67827062FE600718BBC /* Service.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		479AA686270A89E600718BBC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				479AA687270A89F900718BBC /* DataStore.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		479AA68E270C3EA500718BBC /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				479AA697270C41AF00718BBC /* Model */,
+				479AA696270C419F00718BBC /* viewModel */,
+				479AA695270C418F00718BBC /* view */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		479AA695270C418F00718BBC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				479AA693270C40C000718BBC /* DropDownSelectableButton.swift */,
+				479AA691270C3FDF00718BBC /* DropDownPopupViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		479AA696270C419F00718BBC /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				479AA698270C422900718BBC /* DropDownPopupViewBuilder.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		479AA697270C41AF00718BBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				479AA69F270C448600718BBC /* Filter.swift */,
+			);
+			name = Model;
+			path = ../Model;
+			sourceTree = "<group>";
+		};
+		479AA69A270C426100718BBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				479AA60B270389FB00718BBC /* UIViewExtension.swift */,
+				479AA60D27038AE000718BBC /* LayoutExtension.swift */,
+				479AA61127038DE100718BBC /* UIColorExtension.swift */,
+				479AA6132703912E00718BBC /* NSObjectExtension.swift */,
+				479AA6172703957800718BBC /* UIViewControllerExtension.swift */,
+				479AA61D2703971700718BBC /* UIFontExtension.swift */,
+				479AA6462704C38100718BBC /* UINavigationControllerExtension.swift */,
+				479AA69B270C429500718BBC /* UIStackViewExtension.swift */,
+				479AA69D270C432C00718BBC /* UILabelExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				479AA62E2703992300718BBC /* Calibre-Light.ttf in Resources */,
+				479AA6A4270C4D4B00718BBC /* Localizable.strings in Resources */,
 				479AA6422703998000718BBC /* Roboto-Bold.ttf in Resources */,
 				479AA6292703985300718BBC /* Dalmatins.otf in Resources */,
 				479AA63B2703995F00718BBC /* Editor-Bold.otf in Resources */,
@@ -549,16 +636,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				47371FFE27037C2A004B4BB8 /* Tutor.swift in Sources */,
+				479AA688270A89F900718BBC /* DataStore.swift in Sources */,
 				479AA6142703912E00718BBC /* NSObjectExtension.swift in Sources */,
 				479AA66A2705627B00718BBC /* Destination.swift in Sources */,
+				479AA69E270C432C00718BBC /* UILabelExtension.swift in Sources */,
+				479AA692270C3FDF00718BBC /* DropDownPopupViewController.swift in Sources */,
+				479AA68D270C3CD200718BBC /* TouchGestureRecorgnizer.swift in Sources */,
+				479AA69C270C429500718BBC /* UIStackViewExtension.swift in Sources */,
 				4737200027037C4C004B4BB8 /* Subject.swift in Sources */,
 				47371FFC27037BFC004B4BB8 /* Lesson.swift in Sources */,
 				479AA672270568F800718BBC /* LiveLessonsHeaderCell.swift in Sources */,
 				47371FFA27037A81004B4BB8 /* LessonViewModel.swift in Sources */,
 				479AA6762705B80600718BBC /* HCellViewCell.swift in Sources */,
+				479AA6A0270C448600718BBC /* Filter.swift in Sources */,
 				4751FF06270340A800107A66 /* MyLessonsController.swift in Sources */,
 				4751FF0C270340A800107A66 /* Ulessons.xcdatamodeld in Sources */,
 				479AA6492704C3C600718BBC /* Strings.swift in Sources */,
+				479AA694270C40C000718BBC /* DropDownSelectableButton.swift in Sources */,
 				4751FF502703555400107A66 /* Config.swift in Sources */,
 				4751FF02270340A800107A66 /* AppDelegate.swift in Sources */,
 				479AA6502704CADC00718BBC /* ConfigurableCell.swift in Sources */,
@@ -570,6 +664,8 @@
 				479AA66C270562C600718BBC /* LessonDestination.swift in Sources */,
 				479AA65B2704CE2B00718BBC /* AppViewController.swift in Sources */,
 				479AA64C2704CA7300718BBC /* TableViewManager.swift in Sources */,
+				479AA699270C422900718BBC /* DropDownPopupViewBuilder.swift in Sources */,
+				479AA68B270C3C5D00718BBC /* LeftIconButton.swift in Sources */,
 				479AA60C270389FB00718BBC /* UIViewExtension.swift in Sources */,
 				479AA6542704CBC200718BBC /* TableIndicatorView.swift in Sources */,
 				479AA68127074F4500718BBC /* EmptyLiveCell.swift in Sources */,
@@ -588,6 +684,7 @@
 				4751FF56270357E100107A66 /* Constants.swift in Sources */,
 				479AA67427056B2500718BBC /* HCellView.swift in Sources */,
 				479AA664270544CC00718BBC /* LessonsViewCell.swift in Sources */,
+				479AA690270C3FA600718BBC /* DropDownData.swift in Sources */,
 				479AA6682705619300718BBC /* LiveLessonController.swift in Sources */,
 				479AA6522704CB1900718BBC /* CellConfigurator.swift in Sources */,
 				479AA6182703957800718BBC /* UIViewControllerExtension.swift in Sources */,
@@ -595,6 +692,7 @@
 				479AA67927062FE600718BBC /* Service.swift in Sources */,
 				479AA60E27038AE000718BBC /* LayoutExtension.swift in Sources */,
 				479AA6472704C38100718BBC /* UINavigationControllerExtension.swift in Sources */,
+				479AA6A2270C492900718BBC /* RightIconButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -142,7 +142,7 @@ class LiveLessonsViewCell: UICollectionViewCell {
         }
         
         userImage.apply {
-            $0.image = Icons.Common.checkedBig
+            $0.image = Icons.Common.user
             $0.clipsToBounds = true
             $0.layer.cornerRadius = Constants.ClockImageView.height / 2
         }

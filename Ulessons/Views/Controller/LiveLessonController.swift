@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class LiveLessonController: AppViewControllerClass,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    enum Section: Hashable {
+        case items
+    }
+    
+    //private var fetchedLiveLessonsController: NSFetchedResultsController<Lesson>!
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -17,13 +24,20 @@ class LiveLessonController: AppViewControllerClass,UICollectionViewDelegate,UICo
         return cv
     }()
     
+    private let filterPickerOptions: [Filter] = [.ALL_SUBJECT, .MATHEMATICS, .ENGLISH, .CHEMISTRY, .BIOLOGY, .PHYSICS]
     private var floatingButton = UIButton().manualLayoutable()
     var lessonViewModel = [LessonViewModel]()
+    
+    private lazy var filterPickerCallback: (Int) -> Void = { [unowned self] selectedFilterIndex in
+        let selectedFilter = self.filterPickerOptions[selectedFilterIndex]
+        print(selectedFilter)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        //fetchData()
+        fetchData()
+        
     }
     
     private func setup() {
@@ -58,7 +72,7 @@ class LiveLessonController: AppViewControllerClass,UICollectionViewDelegate,UICo
 
 }
 
-extension LiveLessonController: UICollectionViewDelegateFlowLayout {
+extension LiveLessonController: UICollectionViewDelegateFlowLayout,DropDownDelegate {
     
     private func setupCollectionView() {
         collectionView.register(LiveLessonsViewCell.self, forCellWithReuseIdentifier: Strings.liveCellId.rawValue)
@@ -133,6 +147,7 @@ extension LiveLessonController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Strings.headerCellId.rawValue, for: indexPath) as! LiveLessonsHeaderCell
+        headerView.delegate = self
         return headerView
     }
     
@@ -146,5 +161,24 @@ extension LiveLessonController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: 320)
+    }
+    
+    func showDropdownMenu(menuTopConstant: CGFloat) {
+        showFilterSelector(withSelected: .ALL_SUBJECT, menuTopConstant: menuTopConstant)
+    }
+    
+    private func showFilterSelector(withSelected selected: Filter, menuTopConstant: CGFloat) {
+        let controller = DropDownPopupViewController(
+            with: DropDownData(
+                icon: nil,
+                title: Strings.selectFilter.localized,
+                popupTitle: Strings.selectFilter.localized,
+                options: filterPickerOptions
+            ),
+            selectedOption: selected, menuTopConstant: menuTopConstant).apply { $0.selectionCallback = filterPickerCallback }
+        
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true, completion: nil)
     }
 }

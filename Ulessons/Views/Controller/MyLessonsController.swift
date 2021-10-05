@@ -29,7 +29,26 @@ class MyLessonsViewVC: AppViewControllerClass,UICollectionViewDelegate,UICollect
     }()
     
     private var barStyle: UIStatusBarStyle = .default
-    private var dropDownButton = UIButton().manualLayoutable()
+    private var dropDownButton: UIButton = {
+        var filled = UIButton.Configuration.filled()
+        filled.title = "Filter"
+        filled.buttonSize = .large
+        filled.image = Icons.Common.dropdown
+        filled.imagePlacement = .trailing
+        filled.imagePadding = 5
+        filled.baseBackgroundColor = .init(hexString: "#313848")
+
+        let button = UIButton(configuration: filled, primaryAction: nil)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let filterPickerOptions: [Filter] = [.ALL_SUBJECT, .MATHEMATICS, .ENGLISH, .CHEMISTRY, .BIOLOGY, .PHYSICS]
+    
+    private lazy var filterPickerCallback: (Int) -> Void = { [unowned self] selectedFilterIndex in
+        let selectedFilter = self.filterPickerOptions[selectedFilterIndex]
+        print(selectedFilter)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +73,10 @@ class MyLessonsViewVC: AppViewControllerClass,UICollectionViewDelegate,UICollect
         setUpProperties()
         setupHierarchy()
         setUpAutoLayout()
+    }
+    
+    @objc private func handleFilterSelections() {
+        self.showFilterSelector(withSelected: .ALL_SUBJECT)
     }
 }
 
@@ -110,9 +133,10 @@ extension MyLessonsViewVC: UICollectionViewDelegateFlowLayout {
     private func setUpProperties() {
         dropDownButton.apply {
             $0.setTitle("All Subject", for: .normal)
-            $0.backgroundColor = .appBlack
+            $0.backgroundColor = .init(hexString: "#313848")
             $0.roundCorners()
             $0.clipsToBounds = true
+            $0.addTarget(self, action: #selector(handleFilterSelections), for: .touchUpInside)
         }
     }
     
@@ -127,6 +151,21 @@ extension MyLessonsViewVC: UICollectionViewDelegateFlowLayout {
             $0.widthAnchor.equalTo(constant: 150).activate()
             $0.heightAnchor.equalTo(constant: 35).activate()
         }
+    }
+    
+    private func showFilterSelector(withSelected selected: Filter) {
+        let controller = DropDownPopupViewController(
+            with: DropDownData(
+                icon: nil,
+                title: Strings.selectFilter.localized,
+                popupTitle: Strings.selectFilter.localized,
+                options: filterPickerOptions
+            ),
+            selectedOption: selected, menuTopConstant: 100).apply { $0.selectionCallback = filterPickerCallback }
+        
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

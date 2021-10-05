@@ -14,6 +14,7 @@ enum Strings: String {
     case emptyLiveCellId = "emptyLiveCellId"
     case headerCellId = "headerCellId"
     case footerCellId = "footerCellId"
+    case selectFilter = "filter.courses.select.course"
 }
 
 extension String {
