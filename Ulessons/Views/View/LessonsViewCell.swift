@@ -12,20 +12,6 @@ class LessonViewCell: UICollectionViewCell {
     var width: CGFloat = 90
     var widthConstant: NSLayoutConstraint?
     
-    var lessonViewModel: LessonViewModel! {
-        didSet {
-            guard let url = URL(string: lessonViewModel.imageUrl) else { return }
-            guard let data = try? Data(contentsOf: url) else { return }
-            lessonImage.image = UIImage(data: data)
-            subjectLabel.text = lessonViewModel.subject.name
-            timeLabel.text = "\(lessonViewModel.getDate())"
-            lessonStateLabel.text = "• \(lessonViewModel.status)".uppercased()
-            lessonTitleLabel.text = lessonViewModel.topic
-            lessonStateLabel.backgroundColor = lessonViewModel.status  == "upcoming" ? .systemGray : lessonViewModel.status  == "live" ? .systemRed : .systemOrange
-            widthConstant?.constant = lessonViewModel.status  == "upcoming" ? 110 : lessonViewModel.status  == "live" ? 70 : 90
-        }
-    }
-    
     private var baseView = UIView().manualLayoutable()
     private var lessonImage = UIImageView().manualLayoutable()
     private var subjectLabel = LessonsLabel().manualLayoutable()
@@ -39,6 +25,21 @@ class LessonViewCell: UICollectionViewCell {
         super.init(frame: frame)
         self.backgroundColor = .appBackground
         setup()
+    }
+    
+    func configureCell(forLessons lesson: LessonsMainViewModel) {
+        if  !(lesson.imageUrl!.isEmpty) {
+            self.lessonImage.af.setImage(
+                withURL: URL(string: (lesson.imageUrl ?? ""))!,
+                placeholderImage: Icons.Common.checkedBig,
+                imageTransition: .crossDissolve(0.2)
+        )}
+        subjectLabel.text = lesson.subjectName
+        timeLabel.text = "\(lesson.date ?? "")"
+        lessonStateLabel.text = "• \(lesson.status ?? "")".uppercased()
+        lessonStateLabel.backgroundColor = lesson.status  == "upcoming" ? .systemGray : lesson.status  == "live" ? .systemRed : .systemOrange
+        widthConstant?.constant = lesson.status  == "upcoming" ? 110 : lesson.status  == "live" ? 70 : 90
+        lessonTitleLabel.text = lesson.topic
     }
     
     required init?(coder: NSCoder) {

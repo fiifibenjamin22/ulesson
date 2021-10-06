@@ -6,19 +6,9 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class HCellViewCell: UICollectionViewCell {
-    
-    var promoViewModel: PromoViewModel! {
-        didSet {
-            guard let url = URL(string: promoViewModel.imageUrl) else { return }
-            let data = try? Data(contentsOf: url)
-            lessonImage.image = UIImage(data: data!)
-            subjectLabel.text = promoViewModel.subject.name
-            timeLabel.text = "\(promoViewModel.getDate()) • \(promoViewModel.tutor.firstname) \(promoViewModel.getLastName())"
-            lessonStateLabel.text = "• \(promoViewModel.status)"
-        }
-    }
     
     private var baseView = UIView().manualLayoutable()
     private var lessonImage = UIImageView().manualLayoutable()
@@ -29,10 +19,28 @@ class HCellViewCell: UICollectionViewCell {
     private var lessonStateLabel = LessonsLabel().manualLayoutable()
     private var lessonMessageImage = UIImageView().manualLayoutable()
     
+    var widthConstant: NSLayoutConstraint?
+    var width: CGFloat = 90
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .appBackground
         setup()
+    }
+    
+    func configureCell(forLessons lesson: LessonsMainViewModel) {
+        if  !(lesson.imageUrl!.isEmpty) {
+            self.lessonImage.af.setImage(
+                withURL: URL(string: (lesson.imageUrl ?? ""))!,
+                placeholderImage: Icons.Common.checkedBig,
+                imageTransition: .crossDissolve(0.2)
+        )}
+        subjectLabel.text = lesson.subjectName
+        timeLabel.text = "\(lesson.date ?? "") • \(lesson.tutorFullName ?? "")"
+        lessonStateLabel.text = "• \(lesson.status ?? "")"
+        lessonStateLabel.backgroundColor = lesson.status  == "upcoming" ? .systemGray : lesson.status  == "live" ? .systemRed : .systemOrange
+        widthConstant?.constant = lesson.status  == "upcoming" ? 110 : lesson.status  == "live" ? 70 : 90
+        lessonTitleLabel.text = lesson.topic
     }
     
     required init?(coder: NSCoder) {
@@ -141,7 +149,7 @@ class HCellViewCell: UICollectionViewCell {
         lessonStateLabel.apply {
             $0.bottomAnchor.equal(to: lessonTitleLabel.topAnchor, constant: -8).activate()
             $0.leadingAnchor.equal(to: lessonTitleLabel.leadingAnchor, constant: 0).activate()
-            $0.widthAnchor.equalTo(constant: 70).activate()
+            widthConstant = $0.widthAnchor.equalTo(constant: 90).activate()
             $0.heightAnchor.equalTo(constant: 25).activate()
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09BBAACEFA91863E07AD947C /* Pods_UlessonsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADBAF8022D72293B03650DD /* Pods_UlessonsTests.framework */; };
+		1A5E6EA0E77F3FB145C77984 /* Pods_Ulessons_UlessonsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FDC2E48B37C3F840296593 /* Pods_Ulessons_UlessonsUITests.framework */; };
 		47371FFA27037A81004B4BB8 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47371FF927037A81004B4BB8 /* LessonViewModel.swift */; };
 		47371FFC27037BFC004B4BB8 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47371FFB27037BFC004B4BB8 /* Lesson.swift */; };
 		47371FFE27037C2A004B4BB8 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47371FFD27037C2A004B4BB8 /* Tutor.swift */; };
@@ -68,7 +70,6 @@
 		479AA67B270639A100718BBC /* PromoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA67A270639A100718BBC /* PromoViewModel.swift */; };
 		479AA68127074F4500718BBC /* EmptyLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68027074F4500718BBC /* EmptyLiveCell.swift */; };
 		479AA68427076AA500718BBC /* MyLessonsFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68327076AA500718BBC /* MyLessonsFooterCell.swift */; };
-		479AA688270A89F900718BBC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA687270A89F900718BBC /* DataStore.swift */; };
 		479AA68B270C3C5D00718BBC /* LeftIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68A270C3C5D00718BBC /* LeftIconButton.swift */; };
 		479AA68D270C3CD200718BBC /* TouchGestureRecorgnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68C270C3CD200718BBC /* TouchGestureRecorgnizer.swift */; };
 		479AA690270C3FA600718BBC /* DropDownData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA68F270C3FA600718BBC /* DropDownData.swift */; };
@@ -80,6 +81,23 @@
 		479AA6A0270C448600718BBC /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA69F270C448600718BBC /* Filter.swift */; };
 		479AA6A2270C492900718BBC /* RightIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479AA6A1270C492900718BBC /* RightIconButton.swift */; };
 		479AA6A4270C4D4B00718BBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 479AA6A3270C4D4B00718BBC /* Localizable.strings */; };
+		47CF246D270D7F4A006317B4 /* Tutors+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2467270D7F4A006317B4 /* Tutors+CoreDataClass.swift */; };
+		47CF246E270D7F4A006317B4 /* Tutors+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2468270D7F4A006317B4 /* Tutors+CoreDataProperties.swift */; };
+		47CF246F270D7F4A006317B4 /* Lessons+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2469270D7F4A006317B4 /* Lessons+CoreDataClass.swift */; };
+		47CF2470270D7F4A006317B4 /* Lessons+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF246A270D7F4A006317B4 /* Lessons+CoreDataProperties.swift */; };
+		47CF2471270D7F4A006317B4 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF246B270D7F4A006317B4 /* Subjects+CoreDataClass.swift */; };
+		47CF2472270D7F4A006317B4 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF246C270D7F4A006317B4 /* Subjects+CoreDataProperties.swift */; };
+		47CF2475270D867E006317B4 /* LessonsDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2474270D867E006317B4 /* LessonsDBManager.swift */; };
+		47CF2477270DA0B5006317B4 /* LessonsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2476270DA0B5006317B4 /* LessonsDataController.swift */; };
+		47CF2481270DE7B9006317B4 /* Lessons+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2480270DE7B9006317B4 /* Lessons+Helper.swift */; };
+		47CF2483270DF289006317B4 /* CommonClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2482270DF289006317B4 /* CommonClasses.swift */; };
+		47CF2485270DF918006317B4 /* LessonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2484270DF918006317B4 /* LessonDataManager.swift */; };
+		47CF2487270DF98D006317B4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2486270DF98D006317B4 /* Reachability.swift */; };
+		47CF2489270DFC4B006317B4 /* LessonsMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2488270DFC4B006317B4 /* LessonsMainViewModel.swift */; };
+		47CF248B270DFEB3006317B4 /* PromoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF248A270DFEB3006317B4 /* PromoListViewModel.swift */; };
+		47CF2490270E12F2006317B4 /* LessonsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF248F270E12F2006317B4 /* LessonsListViewModel.swift */; };
+		47CF2492270E2AFE006317B4 /* MyLessonsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF2491270E2AFE006317B4 /* MyLessonsListViewModel.swift */; };
+		47CF2495270E34E3006317B4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 47CF2494270E34E3006317B4 /* AlamofireImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +118,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3ADBAF8022D72293B03650DD /* Pods_UlessonsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UlessonsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47371FF927037A81004B4BB8 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 		47371FFB27037BFC004B4BB8 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		47371FFD27037C2A004B4BB8 /* Tutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
@@ -166,7 +185,6 @@
 		479AA68027074F4500718BBC /* EmptyLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLiveCell.swift; sourceTree = "<group>"; };
 		479AA68327076AA500718BBC /* MyLessonsFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLessonsFooterCell.swift; sourceTree = "<group>"; };
 		479AA685270780BE00718BBC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		479AA687270A89F900718BBC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		479AA68A270C3C5D00718BBC /* LeftIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftIconButton.swift; sourceTree = "<group>"; };
 		479AA68C270C3CD200718BBC /* TouchGestureRecorgnizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecorgnizer.swift; sourceTree = "<group>"; };
 		479AA68F270C3FA600718BBC /* DropDownData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownData.swift; sourceTree = "<group>"; };
@@ -178,6 +196,24 @@
 		479AA69F270C448600718BBC /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		479AA6A1270C492900718BBC /* RightIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightIconButton.swift; sourceTree = "<group>"; };
 		479AA6A3270C4D4B00718BBC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		47CF2467270D7F4A006317B4 /* Tutors+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tutors+CoreDataClass.swift"; sourceTree = "<group>"; };
+		47CF2468270D7F4A006317B4 /* Tutors+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tutors+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		47CF2469270D7F4A006317B4 /* Lessons+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lessons+CoreDataClass.swift"; sourceTree = "<group>"; };
+		47CF246A270D7F4A006317B4 /* Lessons+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lessons+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		47CF246B270D7F4A006317B4 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
+		47CF246C270D7F4A006317B4 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		47CF2474270D867E006317B4 /* LessonsDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsDBManager.swift; sourceTree = "<group>"; };
+		47CF2476270DA0B5006317B4 /* LessonsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsDataController.swift; sourceTree = "<group>"; };
+		47CF2480270DE7B9006317B4 /* Lessons+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lessons+Helper.swift"; sourceTree = "<group>"; };
+		47CF2482270DF289006317B4 /* CommonClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonClasses.swift; sourceTree = "<group>"; };
+		47CF2484270DF918006317B4 /* LessonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDataManager.swift; sourceTree = "<group>"; };
+		47CF2486270DF98D006317B4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		47CF2488270DFC4B006317B4 /* LessonsMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsMainViewModel.swift; sourceTree = "<group>"; };
+		47CF248A270DFEB3006317B4 /* PromoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoListViewModel.swift; sourceTree = "<group>"; };
+		47CF248F270E12F2006317B4 /* LessonsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListViewModel.swift; sourceTree = "<group>"; };
+		47CF2491270E2AFE006317B4 /* MyLessonsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLessonsListViewModel.swift; sourceTree = "<group>"; };
+		F5B6A9B1C69986A1555212B9 /* Pods_Ulessons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ulessons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FDC2E48B37C3F840296593 /* Pods_Ulessons_UlessonsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ulessons_UlessonsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CF2495270E34E3006317B4 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BBAACEFA91863E07AD947C /* Pods_UlessonsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5E6EA0E77F3FB145C77984 /* Pods_Ulessons_UlessonsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +252,7 @@
 				4751FF1A270340AB00107A66 /* UlessonsTests */,
 				4751FF24270340AB00107A66 /* UlessonsUITests */,
 				4751FEFF270340A800107A66 /* Products */,
+				A0874D9CD0B19A17FF7811AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,13 +274,13 @@
 				4751FF4E2703554100107A66 /* Configs */,
 				4751FF3D27034EF200107A66 /* Commons */,
 				4751FF3A27034B7200107A66 /* EntryTools */,
+				4751FF362703424B00107A66 /* Model */,
 				4751FF342703421E00107A66 /* Views */,
 				4751FF352703423200107A66 /* ViewModel */,
 				4751FF0D270340AB00107A66 /* Assets.xcassets */,
 				4751FF0F270340AB00107A66 /* LaunchScreen.storyboard */,
 				4751FF12270340AB00107A66 /* Info.plist */,
 				479AA6A3270C4D4B00718BBC /* Localizable.strings */,
-				4751FF0A270340A800107A66 /* Ulessons.xcdatamodeld */,
 			);
 			path = Ulessons;
 			sourceTree = "<group>";
@@ -265,7 +305,6 @@
 		4751FF342703421E00107A66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4751FF362703424B00107A66 /* Model */,
 				479AA68E270C3EA500718BBC /* DropDown */,
 				479AA6622705439200718BBC /* Controller */,
 				479AA6612705438A00718BBC /* View */,
@@ -278,6 +317,10 @@
 			children = (
 				47371FF927037A81004B4BB8 /* LessonViewModel.swift */,
 				479AA67A270639A100718BBC /* PromoViewModel.swift */,
+				47CF2488270DFC4B006317B4 /* LessonsMainViewModel.swift */,
+				47CF248A270DFEB3006317B4 /* PromoListViewModel.swift */,
+				47CF248F270E12F2006317B4 /* LessonsListViewModel.swift */,
+				47CF2491270E2AFE006317B4 /* MyLessonsListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -290,8 +333,7 @@
 				47371FFD27037C2A004B4BB8 /* Tutor.swift */,
 				47371FFF27037C4C004B4BB8 /* Subject.swift */,
 			);
-			name = Model;
-			path = DropDown/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4751FF3A27034B7200107A66 /* EntryTools */ = {
@@ -324,6 +366,8 @@
 				479AA68A270C3C5D00718BBC /* LeftIconButton.swift */,
 				479AA6A1270C492900718BBC /* RightIconButton.swift */,
 				479AA68C270C3CD200718BBC /* TouchGestureRecorgnizer.swift */,
+				47CF2482270DF289006317B4 /* CommonClasses.swift */,
+				47CF2486270DF98D006317B4 /* Reachability.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -419,6 +463,7 @@
 				4751FF05270340A800107A66 /* MyLessonsController.swift */,
 				479AA6672705619300718BBC /* LiveLessonController.swift */,
 				479AA66B270562C600718BBC /* LessonDestination.swift */,
+				47CF2476270DA0B5006317B4 /* LessonsDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,7 +479,16 @@
 		479AA686270A89E600718BBC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				479AA687270A89F900718BBC /* DataStore.swift */,
+				47CF2467270D7F4A006317B4 /* Tutors+CoreDataClass.swift */,
+				47CF2468270D7F4A006317B4 /* Tutors+CoreDataProperties.swift */,
+				47CF2469270D7F4A006317B4 /* Lessons+CoreDataClass.swift */,
+				47CF246A270D7F4A006317B4 /* Lessons+CoreDataProperties.swift */,
+				47CF246B270D7F4A006317B4 /* Subjects+CoreDataClass.swift */,
+				47CF246C270D7F4A006317B4 /* Subjects+CoreDataProperties.swift */,
+				4751FF0A270340A800107A66 /* Ulessons.xcdatamodeld */,
+				47CF2474270D867E006317B4 /* LessonsDBManager.swift */,
+				47CF2480270DE7B9006317B4 /* Lessons+Helper.swift */,
+				47CF2484270DF918006317B4 /* LessonDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -491,6 +545,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A0874D9CD0B19A17FF7811AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5B6A9B1C69986A1555212B9 /* Pods_Ulessons.framework */,
+				F6FDC2E48B37C3F840296593 /* Pods_Ulessons_UlessonsUITests.framework */,
+				3ADBAF8022D72293B03650DD /* Pods_UlessonsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +572,7 @@
 			);
 			name = Ulessons;
 			packageProductDependencies = (
+				47CF2494270E34E3006317B4 /* AlamofireImage */,
 			);
 			productName = Ulessons;
 			productReference = 4751FEFE270340A800107A66 /* Ulessons.app */;
@@ -517,6 +582,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4751FF2E270340AB00107A66 /* Build configuration list for PBXNativeTarget "UlessonsTests" */;
 			buildPhases = (
+				A7A5CFD239EE6A90EDE596E9 /* [CP] Check Pods Manifest.lock */,
 				4751FF13270340AB00107A66 /* Sources */,
 				4751FF14270340AB00107A66 /* Frameworks */,
 				4751FF15270340AB00107A66 /* Resources */,
@@ -535,6 +601,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4751FF31270340AB00107A66 /* Build configuration list for PBXNativeTarget "UlessonsUITests" */;
 			buildPhases = (
+				F8F5729AB991CB65C342C140 /* [CP] Check Pods Manifest.lock */,
 				4751FF1D270340AB00107A66 /* Sources */,
 				4751FF1E270340AB00107A66 /* Frameworks */,
 				4751FF1F270340AB00107A66 /* Resources */,
@@ -582,6 +649,7 @@
 			);
 			mainGroup = 4751FEF5270340A800107A66;
 			packageReferences = (
+				47CF2493270E34E3006317B4 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 4751FEFF270340A800107A66 /* Products */;
 			projectDirPath = "";
@@ -630,13 +698,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A7A5CFD239EE6A90EDE596E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UlessonsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8F5729AB991CB65C342C140 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ulessons-UlessonsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4751FEFA270340A800107A66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				47371FFE27037C2A004B4BB8 /* Tutor.swift in Sources */,
-				479AA688270A89F900718BBC /* DataStore.swift in Sources */,
+				47CF2483270DF289006317B4 /* CommonClasses.swift in Sources */,
+				47CF246E270D7F4A006317B4 /* Tutors+CoreDataProperties.swift in Sources */,
 				479AA6142703912E00718BBC /* NSObjectExtension.swift in Sources */,
 				479AA66A2705627B00718BBC /* Destination.swift in Sources */,
 				479AA69E270C432C00718BBC /* UILabelExtension.swift in Sources */,
@@ -648,16 +764,20 @@
 				479AA672270568F800718BBC /* LiveLessonsHeaderCell.swift in Sources */,
 				47371FFA27037A81004B4BB8 /* LessonViewModel.swift in Sources */,
 				479AA6762705B80600718BBC /* HCellViewCell.swift in Sources */,
+				47CF2477270DA0B5006317B4 /* LessonsDataController.swift in Sources */,
 				479AA6A0270C448600718BBC /* Filter.swift in Sources */,
 				4751FF06270340A800107A66 /* MyLessonsController.swift in Sources */,
+				47CF2472270D7F4A006317B4 /* Subjects+CoreDataProperties.swift in Sources */,
 				4751FF0C270340A800107A66 /* Ulessons.xcdatamodeld in Sources */,
 				479AA6492704C3C600718BBC /* Strings.swift in Sources */,
+				47CF2490270E12F2006317B4 /* LessonsListViewModel.swift in Sources */,
 				479AA694270C40C000718BBC /* DropDownSelectableButton.swift in Sources */,
 				4751FF502703555400107A66 /* Config.swift in Sources */,
 				4751FF02270340A800107A66 /* AppDelegate.swift in Sources */,
 				479AA6502704CADC00718BBC /* ConfigurableCell.swift in Sources */,
 				479AA61A2703965C00718BBC /* AppNavigationController.swift in Sources */,
 				479AA64E2704CAAE00718BBC /* TableSection.swift in Sources */,
+				47CF246D270D7F4A006317B4 /* Tutors+CoreDataClass.swift in Sources */,
 				479AA68427076AA500718BBC /* MyLessonsFooterCell.swift in Sources */,
 				479AA61E2703971700718BBC /* UIFontExtension.swift in Sources */,
 				4751FF38270346B100107A66 /* SceneDelegateExtension.swift in Sources */,
@@ -667,19 +787,25 @@
 				479AA699270C422900718BBC /* DropDownPopupViewBuilder.swift in Sources */,
 				479AA68B270C3C5D00718BBC /* LeftIconButton.swift in Sources */,
 				479AA60C270389FB00718BBC /* UIViewExtension.swift in Sources */,
+				47CF2470270D7F4A006317B4 /* Lessons+CoreDataProperties.swift in Sources */,
 				479AA6542704CBC200718BBC /* TableIndicatorView.swift in Sources */,
+				47CF2487270DF98D006317B4 /* Reachability.swift in Sources */,
 				479AA68127074F4500718BBC /* EmptyLiveCell.swift in Sources */,
 				479AA6202703974800718BBC /* AppError.swift in Sources */,
 				4737200227038438004B4BB8 /* Generics.swift in Sources */,
 				479AA6582704CC6F00718BBC /* TableViewExtention.swift in Sources */,
 				479AA616270391A800718BBC /* TypeAliases.swift in Sources */,
+				47CF248B270DFEB3006317B4 /* PromoListViewModel.swift in Sources */,
+				47CF2485270DF918006317B4 /* LessonDataManager.swift in Sources */,
 				479AA66E270563A500718BBC /* Router.swift in Sources */,
 				479AA666270553C500718BBC /* LessonsLabel.swift in Sources */,
+				47CF246F270D7F4A006317B4 /* Lessons+CoreDataClass.swift in Sources */,
 				479AA61C270396A500718BBC /* Icons.swift in Sources */,
 				479AA67B270639A100718BBC /* PromoViewModel.swift in Sources */,
 				479AA61227038DE100718BBC /* UIColorExtension.swift in Sources */,
 				479AA61027038C5000718BBC /* UIEdgeInsets.swift in Sources */,
 				479AA6702705682400718BBC /* LIveLessonsViewCell.swift in Sources */,
+				47CF2475270D867E006317B4 /* LessonsDBManager.swift in Sources */,
 				479AA6562704CBE800718BBC /* TableIndicatorViewBuilder.swift in Sources */,
 				4751FF56270357E100107A66 /* Constants.swift in Sources */,
 				479AA67427056B2500718BBC /* HCellView.swift in Sources */,
@@ -687,7 +813,11 @@
 				479AA690270C3FA600718BBC /* DropDownData.swift in Sources */,
 				479AA6682705619300718BBC /* LiveLessonController.swift in Sources */,
 				479AA6522704CB1900718BBC /* CellConfigurator.swift in Sources */,
+				47CF2489270DFC4B006317B4 /* LessonsMainViewModel.swift in Sources */,
 				479AA6182703957800718BBC /* UIViewControllerExtension.swift in Sources */,
+				47CF2492270E2AFE006317B4 /* MyLessonsListViewModel.swift in Sources */,
+				47CF2481270DE7B9006317B4 /* Lessons+Helper.swift in Sources */,
+				47CF2471270D7F4A006317B4 /* Subjects+CoreDataClass.swift in Sources */,
 				4751FF04270340A800107A66 /* SceneDelegate.swift in Sources */,
 				479AA67927062FE600718BBC /* Service.swift in Sources */,
 				479AA60E27038AE000718BBC /* LayoutExtension.swift in Sources */,
@@ -868,6 +998,7 @@
 				INFOPLIST_FILE = Ulessons/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -895,6 +1026,7 @@
 				INFOPLIST_FILE = Ulessons/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1046,6 +1178,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		47CF2493270E34E3006317B4 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		47CF2494270E34E3006317B4 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47CF2493270E34E3006317B4 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4751FF0A270340A800107A66 /* Ulessons.xcdatamodeld */ = {

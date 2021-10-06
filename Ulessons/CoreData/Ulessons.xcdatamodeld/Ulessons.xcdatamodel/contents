@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Lessons" representedClassName=".Lessons" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="expires_at" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="image_url" optional="YES" attributeType="String"/>
+        <attribute name="start_at" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="subjectsName" optional="YES" attributeType="String"/>
+        <attribute name="topic" optional="YES" attributeType="String"/>
+        <attribute name="tutorFirstName" optional="YES" attributeType="String"/>
+        <attribute name="tutorLastName" optional="YES" attributeType="String"/>
+        <relationship name="subjects" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Subjects" inverseName="ofLessons" inverseEntity="Subjects"/>
+        <relationship name="tutors" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Tutors" inverseName="ofLessons" inverseEntity="Tutors"/>
+    </entity>
+    <entity name="Subjects" representedClassName=".Subjects" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="ofLessons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lessons" inverseName="subjects" inverseEntity="Lessons"/>
+    </entity>
+    <entity name="Tutors" representedClassName=".Tutors" syncable="YES">
+        <attribute name="firstname" optional="YES" attributeType="String"/>
+        <attribute name="lastname" optional="YES" attributeType="String"/>
+        <relationship name="ofLessons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lessons" inverseName="tutors" inverseEntity="Lessons"/>
+    </entity>
+    <elements>
+        <element name="Lessons" positionX="-63" positionY="-18" width="128" height="209"/>
+        <element name="Subjects" positionX="-36" positionY="9" width="128" height="59"/>
+        <element name="Tutors" positionX="-54" positionY="-9" width="128" height="74"/>
+    </elements>
+</model>

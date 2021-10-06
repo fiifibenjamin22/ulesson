@@ -9,25 +9,34 @@ import XCTest
 @testable import Ulessons
 
 class UlessonsTests: XCTestCase {
+    
+    let kTimeOut = 10.0
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        continueAfterFailure = false
+        sleep(1)
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLiveLessonsFormat() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testPromoLessonsFormat() {
+        let app = XCUIApplication()
+        app.launch()
+        
     }
-
+    
+    func testMyLessonsFormat() {
+        let app = XCUIApplication()
+        app.launch()
+    }
 }

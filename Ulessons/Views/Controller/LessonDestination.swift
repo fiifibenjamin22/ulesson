@@ -16,7 +16,7 @@ extension LessonDestination: Destination {
         switch self {
         case .lesson(let lessonModel):
             let viewController = MyLessonsViewVC()
-            viewController.lessonViewModel = lessonModel
+            //viewController.lessonViewModel = lessonModel
             return viewController
         }
     }

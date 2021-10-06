@@ -8,18 +8,7 @@
 import UIKit
 
 class MyLessonsViewVC: AppViewControllerClass,UICollectionViewDelegate,UICollectionViewDataSource {
-    
-    var lessonViewModel = [LessonViewModel]()
-    
-//    init(myLessons: [LessonViewModel]) {
-//        self.lessonViewModel = myLessons
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+            
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -44,6 +33,7 @@ class MyLessonsViewVC: AppViewControllerClass,UICollectionViewDelegate,UICollect
     }()
     
     private let filterPickerOptions: [Filter] = [.ALL_SUBJECT, .MATHEMATICS, .ENGLISH, .CHEMISTRY, .BIOLOGY, .PHYSICS]
+    var viewModel = MyLessonsListViewModel()
     
     private lazy var filterPickerCallback: (Int) -> Void = { [unowned self] selectedFilterIndex in
         let selectedFilter = self.filterPickerOptions[selectedFilterIndex]
@@ -54,7 +44,16 @@ class MyLessonsViewVC: AppViewControllerClass,UICollectionViewDelegate,UICollect
         super.viewDidLoad()
         self.setup()
         
-        print(lessonViewModel)
+        fetchData()
+    }
+    
+    fileprivate func fetchData(){
+        viewModel.fetchMyLessons { [weak self] (success) in
+            
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
     }
     
     private func setup() {
@@ -83,12 +82,11 @@ class MyLessonsViewVC: AppViewControllerClass,UICollectionViewDelegate,UICollect
 extension MyLessonsViewVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.lessonViewModel.isEmpty ? 1 : self.lessonViewModel.count
-        //return lessonViewModel.count
+        return self.viewModel.rowsCount == 0 ? 1 : self.viewModel.rowsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if self.lessonViewModel.isEmpty  {
+        if self.viewModel.rowsCount == 0  {
             let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.emptyLiveCellId.rawValue, for: indexPath) as! EmptyLiveCell
             emptyCell.isEmptyLabel.text = "Your timetable is empty"
             emptyCell.isEmptyDescriptionLabel.text = "Click remind me to add lessons to your timetable"
@@ -96,7 +94,7 @@ extension MyLessonsViewVC: UICollectionViewDelegateFlowLayout {
             return emptyCell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.cellId.rawValue, for: indexPath) as! LessonViewCell
-            cell.lessonViewModel = lessonViewModel[indexPath.item]
+            cell.configureCell(forLessons: viewModel.myLessonsListViewModels[indexPath.row])
             return cell
         }
     }
@@ -169,7 +167,7 @@ extension MyLessonsViewVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return self.lessonViewModel.isEmpty ? CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width) : CGSize(width: self.view.frame.size.width, height: 315)
+        return self.viewModel.rowsCount == 0 ? CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width) : CGSize(width: self.view.frame.size.width, height: 315)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

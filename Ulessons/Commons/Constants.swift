@@ -9,6 +9,8 @@ import UIKit
 
 enum Constants {
     
+    static let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     /// - Tag: DefaultAppCornerRadius
     static let cornerRadius: CGFloat = 8.0
     static let animationDuration: TimeInterval = 0.2

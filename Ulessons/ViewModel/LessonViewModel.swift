@@ -8,31 +8,34 @@
 import UIKit
 
 struct LessonViewModel {
-    var id: String
-    var tutor: Tutor
-    var subject: Subject
-    var imageUrl: String
-    var status: String
-    var topic: String
-    var createdAt: String
-    var startAt: String
-    var expiresAt: String
+    var id: String?
+    let tutorFirstName: String?
+    let tutorLastName: String?
+    let subjectName: String?
+    var imageUrl: String?
+    var status: String?
+    var topic: String?
+    var createdAt: String?
+    var startAt: String?
+    var expiresAt: String?
     
     init(lesson: Lesson) {
         self.id = lesson.id
-        self.tutor = lesson.tutor
-        self.subject = lesson.subject
+        self.tutorFirstName = lesson.tutor?.firstname
+        self.tutorLastName = lesson.tutor?.lastname
+        self.subjectName = lesson.subject?.name
         self.imageUrl = lesson.image_url
         self.status = lesson.status
         self.topic = lesson.topic
         self.createdAt = lesson.createdAt
         self.startAt = lesson.start_at
         self.expiresAt = lesson.expires_at
+
     }
     
     func getLastName() -> String {
-        guard let lname = self.tutor.lastname else { return "" }
-        if self.tutor.lastname.isEmptyOrNil {
+        guard let lname = self.tutorLastName  else { return "" }
+        if self.tutorLastName.isEmptyOrNil {
             return ""
         }else{
             return lname
@@ -40,7 +43,8 @@ struct LessonViewModel {
     }
     
     func getDate() -> String {
-        var strDate = self.createdAt
+        guard let str = self.createdAt else { return "" }
+        var strDate = str
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         let dateFormatterPrint = DateFormatter()
@@ -49,6 +53,4 @@ struct LessonViewModel {
         strDate =  dateFormatterPrint.string(from: datee ?? Date())
         return "\(strDate)"
     }
-    
-    
 }

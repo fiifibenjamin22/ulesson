@@ -7,7 +7,11 @@
 
 import UIKit
 
-struct Subject: Decodable {
+struct Subject: Codable {
     var name: String
+    
+    init(subject: String) {
+        self.name = subject
+    }
 }
 

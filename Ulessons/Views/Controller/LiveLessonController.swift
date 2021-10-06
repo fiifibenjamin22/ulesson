@@ -14,7 +14,7 @@ class LiveLessonController: AppViewControllerClass,UICollectionViewDelegate,UICo
         case items
     }
     
-    //private var fetchedLiveLessonsController: NSFetchedResultsController<Lesson>!
+    var viewModel = LessonsListViewModel()
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -37,7 +37,7 @@ class LiveLessonController: AppViewControllerClass,UICollectionViewDelegate,UICo
         super.viewDidLoad()
         self.setup()
         fetchData()
-        
+        let _ = Lessons()
     }
     
     private func setup() {
@@ -59,14 +59,11 @@ class LiveLessonController: AppViewControllerClass,UICollectionViewDelegate,UICo
     }
     
     fileprivate func fetchData(){
-        Service.shared.fetchPromotion { lessons, err in
-            if let err = err {
-                print("Failed to fetch courses:", err.localizedDescription)
-                return
+        viewModel.fetchLessons { [weak self] (success) in
+            
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
             }
-            //let filteredUpcomingLessons = lessons?.filter { $0.status != "live" }
-            self.lessonViewModel = lessons?.map({ return LessonViewModel(lesson: $0) }) ?? []
-            self.collectionView.reloadData()
         }
     }
 
@@ -131,16 +128,16 @@ extension LiveLessonController: UICollectionViewDelegateFlowLayout,DropDownDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return self.lessonViewModel.isEmpty ? 1 : self.lessonViewModel.count
+        return self.viewModel.rowsCount == 0 ? 1 : self.viewModel.rowsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if self.lessonViewModel.isEmpty  {
+        if self.viewModel.rowsCount == 0  {
             let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.emptyLiveCellId.rawValue, for: indexPath) as! EmptyLiveCell
             return emptyCell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.liveCellId.rawValue, for: indexPath) as! LiveLessonsViewCell
-            cell.lessonViewModel = self.lessonViewModel[indexPath.item]
+            cell.configureCell(forLessons: viewModel.lessonsViewModels[indexPath.row])
             return cell
         }
     }
@@ -156,7 +153,7 @@ extension LiveLessonController: UICollectionViewDelegateFlowLayout,DropDownDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return self.lessonViewModel.isEmpty ? CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width) : CGSize(width: self.view.frame.size.width, height: 150)
+        return self.viewModel.rowsCount == 0 ? CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width) : CGSize(width: self.view.frame.size.width, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

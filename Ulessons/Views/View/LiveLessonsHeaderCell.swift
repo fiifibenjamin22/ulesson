@@ -21,6 +21,8 @@ class LiveLessonsHeaderCell: UICollectionViewCell,UICollectionViewDelegate,UICol
         return cv
     }()
     
+    var viewModel = PromoListViewModel()
+    
     let paginator = UIPageControl().manualLayoutable()
     var delegate: DropDownDelegate?
     private var dropDownButton: UIButton = {
@@ -46,14 +48,11 @@ class LiveLessonsHeaderCell: UICollectionViewCell,UICollectionViewDelegate,UICol
     }
     
     fileprivate func fetchData(){
-        Service.shared.fetchPromotion { lessons, err in
-            if let err = err {
-                print("Failed to fetch courses:", err.localizedDescription)
-                return
+        viewModel.fetchPromos { [weak self] (success) in
+            
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
             }
-            let filteredLessons = lessons?.filter { $0.status == "live" }
-            self.promoViewModel = filteredLessons?.map({ return PromoViewModel(lesson: $0) }) ?? []
-            self.collectionView.reloadData()
         }
     }
     
@@ -76,7 +75,7 @@ extension LiveLessonsHeaderCell: UICollectionViewDelegateFlowLayout {
         
         paginator.apply {
             $0.currentPage = 0
-            $0.numberOfPages = 3
+            $0.numberOfPages = 1
             $0.currentPageIndicatorTintColor = .systemGray
             $0.pageIndicatorTintColor = .systemFill
         }
@@ -109,12 +108,12 @@ extension LiveLessonsHeaderCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.promoViewModel.prefix(3).count
+        return self.viewModel.rowsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Strings.liveCellId.rawValue, for: indexPath) as! HCellViewCell
-        cell.promoViewModel = promoViewModel[indexPath.item]
+        cell.configureCell(forLessons: viewModel.promoViewModels[indexPath.row])
         return cell
     }
     

@@ -15,6 +15,7 @@ enum Strings: String {
     case headerCellId = "headerCellId"
     case footerCellId = "footerCellId"
     case selectFilter = "filter.courses.select.course"
+    case kDataStoreName = "ULessons"
 }
 
 extension String {
