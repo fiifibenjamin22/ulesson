@@ -14,19 +14,7 @@ enum Constants {
     /// - Tag: DefaultAppCornerRadius
     static let cornerRadius: CGFloat = 8.0
     static let animationDuration: TimeInterval = 0.2
-    static let transitionAnimationDuration: TimeInterval = 0.4
-    static let navigationBarHeight: CGFloat = 44
-    static let separatorSize: CGFloat = 1
     static let defaultPagingCap: Double = 1
-    static let buttonDefaultWidth: CGFloat = 196
-    static let buttonHeight: CGFloat = 50
-    static let bigButtonHeight: CGFloat = 55
-    static let extraBigButtonHeight: CGFloat = 72
-    static let horizontalMarginBig: CGFloat = 35
-    static let horizontalMargin: CGFloat = 25
-    static let roundedIconSize: CGFloat = 100
-    static let lineHeightBig: CGFloat = 24
-    static let standardButtonHeight: CGFloat = 40
 
     enum Margin {
         static let tiny: CGFloat = 6

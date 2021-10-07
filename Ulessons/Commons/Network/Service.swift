@@ -61,7 +61,6 @@ class Service: NSObject {
 
 enum HTTPMethod: String {
     case get = "GET"
-    case post = "POST"
 }
 
 enum NetworkError: String, Error {
