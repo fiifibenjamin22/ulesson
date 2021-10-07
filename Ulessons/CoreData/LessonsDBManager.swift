@@ -33,7 +33,7 @@ class LessonsDBManager {
 
         let context = context ?? Constants.appDelegate.mainContext
         
-        //Fetch all saved users
+        //Fetch all saved lessons
         let allLessonsEntities = fetchAllLessons(onContext: context)
         guard case .success(let lessonsEntities) = allLessonsEntities  else {
             return []

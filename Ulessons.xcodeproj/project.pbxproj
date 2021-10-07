@@ -18,8 +18,6 @@
 		4751FF0C270340A800107A66 /* Ulessons.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4751FF0A270340A800107A66 /* Ulessons.xcdatamodeld */; };
 		4751FF0E270340AB00107A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4751FF0D270340AB00107A66 /* Assets.xcassets */; };
 		4751FF11270340AB00107A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4751FF0F270340AB00107A66 /* LaunchScreen.storyboard */; };
-		4751FF26270340AB00107A66 /* UlessonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751FF25270340AB00107A66 /* UlessonsUITests.swift */; };
-		4751FF28270340AB00107A66 /* UlessonsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751FF27270340AB00107A66 /* UlessonsUITestsLaunchTests.swift */; };
 		4751FF38270346B100107A66 /* SceneDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751FF37270346B100107A66 /* SceneDelegateExtension.swift */; };
 		4751FF502703555400107A66 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751FF4F2703555400107A66 /* Config.swift */; };
 		4751FF56270357E100107A66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751FF55270357E100107A66 /* Constants.swift */; };
@@ -743,8 +741,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4751FF28270340AB00107A66 /* UlessonsUITestsLaunchTests.swift in Sources */,
-				4751FF26270340AB00107A66 /* UlessonsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,9 +16,7 @@ class LessonDataManager {
     let lessonDBManager = LessonsDBManager()
     
     func fetchPromos(completion: @escaping (Result<[Lesson], Error>) -> ()) {
-        
         if Reachability().isOnline {
-            
             lessonsServiceManager.fetchAllPromos { [weak self] (result) in
                 switch result {
                     case .success(let lessons):
@@ -31,8 +29,8 @@ class LessonDataManager {
         } else {
             let result = lessonDBManager.fetchAllLessons()
             switch result {
-                case .success(let users):
-                    completion(.success(users.map{ $0.toLessonsModel()}))
+                case .success(let lessons):
+                    completion(.success(lessons.map{ $0.toLessonsModel()}))
                 case .failure(let error):
                     completion(.failure(error))
             }
@@ -40,9 +38,7 @@ class LessonDataManager {
     }
     
     func fetchLessons(completion: @escaping (Result<[Lesson], Error>) -> ()) {
-        
         if Reachability().isOnline {
-            
             lessonsServiceManager.fetchAllLessons { [weak self] (result) in
                 switch result {
                     case .success(let lessons):
@@ -55,8 +51,8 @@ class LessonDataManager {
         } else {
             let result = lessonDBManager.fetchAllLessons()
             switch result {
-                case .success(let users):
-                    completion(.success(users.map{ $0.toLessonsModel()}))
+                case .success(let lessons):
+                    completion(.success(lessons.map{ $0.toLessonsModel()}))
                 case .failure(let error):
                     completion(.failure(error))
             }
@@ -64,9 +60,7 @@ class LessonDataManager {
     }
     
     func fetchMyLessons(completion: @escaping (Result<[Lesson], Error>) -> ()) {
-        
         if Reachability().isOnline {
-            
             lessonsServiceManager.fetchMyLessons { [weak self] (result) in
                 switch result {
                     case .success(let lessons):
@@ -79,8 +73,8 @@ class LessonDataManager {
         } else {
             let result = lessonDBManager.fetchAllLessons()
             switch result {
-                case .success(let users):
-                    completion(.success(users.map{ $0.toLessonsModel()}))
+                case .success(let lessons):
+                    completion(.success(lessons.map{ $0.toLessonsModel()}))
                 case .failure(let error):
                     completion(.failure(error))
             }
