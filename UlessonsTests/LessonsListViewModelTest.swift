@@ -19,7 +19,7 @@ class LessonsListViewModelTest: XCTestCase {
     }
     
     override class func tearDown() {
-        self.viewModel = nil
+        //self.viewModel = nil
         super.tearDown()
     }
     
