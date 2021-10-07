@@ -21,22 +21,4 @@ class UlessonsTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testLiveLessonsFormat() {
-        let app = XCUIApplication()
-        app.launch()
-        
-        
-    }
-    
-    func testPromoLessonsFormat() {
-        let app = XCUIApplication()
-        app.launch()
-        
-    }
-    
-    func testMyLessonsFormat() {
-        let app = XCUIApplication()
-        app.launch()
-    }
 }
